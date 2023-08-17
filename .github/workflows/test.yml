@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Annotate flaky tests
+    steps:
+    - name: Get repo
+      uses: actions/checkout@main
+    - name: Annotate Step
+      id: annotate
+      uses: WillBailie/dusk-results-action@main
+      with:
+        report_path: ./dusk_output.json
+        github_token: ${{ secrets.GITHUB_TOKEN }}

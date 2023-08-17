@@ -1,0 +1,13 @@
+name: 'Generate Annotations'
+description: 'annotate'
+inputs: 
+  github_token:
+    description: 'GITHUB_TOKEN'
+    required: true
+  report_path:
+    description: 'json file path'
+    required: false
+    default: tests/Browser/dusk_output.json
+runs:
+  using: 'node16'
+  main: 'index.js'
