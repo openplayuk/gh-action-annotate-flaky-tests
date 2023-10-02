@@ -7,9 +7,12 @@ async function run() {
 
     const filePath = core.getInput('report_path');
 
+    console.log(filePath);
+
     if(fs.existsSync(filePath)) {
       const content = fs.readFileSync();
       jsonData = JSON.parse(content);
+      console.log(jsonData);
     } else {
       console.log('file not found');
       return;
