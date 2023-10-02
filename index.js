@@ -5,14 +5,12 @@ const fs = require('fs');
 async function run() {
   try {
 
-    const filePath = core.getInput('report_path');
-
-    console.log(filePath);
+    // const filePath = core.getInput('report_path');
+    const filePath = './dusk_output.json';
 
     if(fs.existsSync(filePath)) {
       const content = fs.readFileSync();
       jsonData = JSON.parse(content);
-      console.log(jsonData);
     } else {
       console.log('file not found');
       return;
@@ -51,7 +49,7 @@ async function run() {
       core.setFailed('No json content available');
     }
   } catch (error) {
-    // core.setFailed(error.message);
+    core.setFailed(error.message);
   }
 }
 
