@@ -7,13 +7,13 @@ async function run() {
 
     const filePath = core.getInput('report_path');
 
-    if(fs.existsSync(filePath)) {
-      const content = fs.readFileSync();
-      jsonData = JSON.parse(content);
-    } else {
-      console.log('file not found');
-      return;
-    }
+    // if(fs.existsSync(filePath)) {
+      // const content = fs.readFileSync();
+      // jsonData = JSON.parse(content);
+    // } else {
+      // console.log('file not found');
+      // return;
+    // }
     
     const annotations = [];
 
