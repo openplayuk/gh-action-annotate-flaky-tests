@@ -5,11 +5,10 @@ const fs = require('fs');
 async function run() {
   try {
 
-    // const filePath = core.getInput('report_path');
-    const filePath = './dusk_output.json';
+    const filePath = core.getInput('report_path');
 
     if(fs.existsSync(filePath)) {
-      const content = fs.readFileSync();
+      const content = fs.readFileSync(filePath);
       jsonData = JSON.parse(content);
     } else {
       console.log('file not found');
