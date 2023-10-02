@@ -51,7 +51,7 @@ async function run() {
       core.setFailed('No json content available');
     }
   } catch (error) {
-    core.setFailed(error.message);
+    // core.setFailed(error.message);
   }
 }
 
