@@ -7,7 +7,7 @@ inputs:
   report_path:
     description: 'json file path'
     required: false
-    default: tests/Browser/dusk_output.json
+    default: dusk_output.json
 runs:
   using: 'node16'
   main: 'index.js'

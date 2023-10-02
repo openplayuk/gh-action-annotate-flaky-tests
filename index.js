@@ -22,7 +22,7 @@ async function run() {
         annotations.push({
           title: item.title,
           message: item.message ,
-          // path: item.file,
+          path: item.file,
           start_line: item.line,
           end_line: item.line,
           annotation_level: item.annotation_level,
