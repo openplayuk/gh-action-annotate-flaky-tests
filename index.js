@@ -15,13 +15,16 @@ async function run() {
       return;
     }
     
-    const annotations = [];
-
     if (jsonData) {
-      core.summary.addHeading('Flaky Tests');
+      core.summary.addHeading('Dusk Test Failures');
       for (const item of jsonData) {
-        core.summary.addDetails(':yellow_circle:	' + item.title, item.file);
-      }
+        const details = item.message + '<br />' + item.file + '<br />' + item.trace;
+        if(item.flaky) {
+          core.summary.addDetails(':yellow_circle:	' + item.title, details);  
+        } else {
+          core.summary.addDetails(':red_circle:	' + item.title, details);
+        }
+      } 
       core.summary.write();
     }
   } catch (error) {
